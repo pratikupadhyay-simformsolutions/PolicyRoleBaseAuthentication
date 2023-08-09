@@ -6,6 +6,10 @@ builder.Services.AddAuthorization(options =>
     // Policy for Admin role
     options.AddPolicy("AdminOnly", policy =>
         policy.RequireRole("Admin"));
+
+    // Policy for User role
+    options.AddPolicy("UserOnly", policy =>
+        policy.RequireRole("User"));
 });
 // Add services to the container.
 builder.Services.AddControllersWithViews();
